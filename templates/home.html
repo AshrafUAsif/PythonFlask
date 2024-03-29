@@ -9,15 +9,23 @@
         #banner{
             height: 360px;
             width: 100%;
+            margin-bottom: 16px;
         }
     </style>
 </head>
 <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="../static/banner.jpg" height="320">
     <div class="container">
     <h1 class="text-center mt-2 mb-4">Tutor Careers</h1>
-    <img class="img-fluid" id="banner" src="../static/banner.jpg" height="320">
-    <h2 class="text-center mt-2 mb-4">About Tutoria Careers</h2>
-    <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus similique nemo hic ea sunt adipisci ducimus quod minus ut illum! Atque velit debitis eaque rerum laborum repellat explicabo perferendis molestiae.</p>
+    <div class="row" style="margin-bottom: 16px;">
+        <div class="col-md-6">
+            <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus similique nemo hic ea sunt adipisci ducimus quod minus ut illum! Atque velit debitis eaque rerum laborum repellat explicabo perferendis molestiae.</p>
+        </div>
+        <div class="d-none d-md-block col-6">
+            <img src="../static/people.jpg" style="height: 320px; border-radius: 8px;">
+        </div>
+    </div>
     <h2 class="text-center mt-2 mb-4">Open Tutor Positions</h2>
     <p>
         {% for job in jobs %}
@@ -25,9 +33,9 @@
         {% endfor %}
     </p>
     <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="text-center mt-4">Copyright 2022, Tutoria Careers</p>
+        <a href="mailto:hello@tutoriacareer?subject=Question%20about%20the%20job%20opening&body=My%20Name%3A%20%3CYour%20name%20here%3E%0D%0AMy%20Question%3A%20%3CEnter%20question%20here%3E" class="btn btn-primary btn-lg">Contact Us</a>
     </div>
+    {% include 'footer.html' %}
 </div>
 </body>
 </html>
